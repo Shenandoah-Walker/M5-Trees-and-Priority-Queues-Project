@@ -7,3 +7,5 @@ class TreeNode:
         self.right = None
 
 class BinaryExpressionTree:
+    def __init__(self, expression):
+        self.root = TreeNode(expression)
