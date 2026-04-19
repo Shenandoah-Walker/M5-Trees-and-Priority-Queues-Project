@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="binary_expression_tree.py" />
     <Compile Include="M5_Trees_and_Priority_Queues_Project.py" />
     <Compile Include="stack.py" />
   </ItemGroup>
