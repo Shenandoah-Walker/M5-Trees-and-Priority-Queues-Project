@@ -16,7 +16,7 @@ postfix_expressions = [
     "5 3 + 8 2 / -"
 ]
 
-print("----- Binary Expression Tree ----")
+print("----- Binary Expression Tree -----")
 
 for expression in postfix_expressions:
     tree = BinaryExpressionTree()
