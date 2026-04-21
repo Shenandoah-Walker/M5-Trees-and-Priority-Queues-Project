@@ -108,7 +108,7 @@ class BinaryExpressionTree:
     def evaluate_tree(self):
         if self.root == None:
             raise ValueError("Error - Tree is empty. An empty tree cannot be evaluated.")
-        return self.evaluate(self.root)
+        return self._evaluate(self.root)
 
     #Method: infix_traversal
     #Purpose: Returns a string representation of the infix traversal of the binary expression tree. This method uses a helper function to recursively traverse the tree in infix order.
