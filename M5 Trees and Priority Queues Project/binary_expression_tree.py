@@ -1,4 +1,3 @@
-from math import e
 from stack import Stack
 
 class TreeNode:
@@ -52,12 +51,12 @@ class BinaryExpressionTree:
             else:
                 raise ValueError("Error - Unsupported token: " + token)
 
-            if not stack.is_empty():
-                self.root = stack.top()
-                stack.pop()
-
-            else:
-                raise ValueError("Error - Stack is empty")
-
-            if not stack.is_empty():
-                raise ValueError("Error - Stack is empty")
+        if not stack.is_empty():
+            self.root = stack.top()
+            stack.pop()
+            
+        else:
+            raise ValueError("Error - Stack is empty")
+        
+        if not stack.is_empty():
+            raise ValueError("Error - unused tokens left on the stack")
