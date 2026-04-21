@@ -60,3 +60,27 @@ class BinaryExpressionTree:
         
         if not stack.is_empty():
             raise ValueError("Error - unused tokens left on the stack")
+
+    def evaluate_tree(self):
+        if self.root == None:
+            raise ValueError("Error - Tree is empty. An empty tree cannot be evaluated.")
+        return self.evaluate(self.root)
+
+
+    #Helper functions
+    def _evaluate(self, node):
+        if node.left == None and node.right == None:
+            return float(node.value)
+        else:
+            left_value = self._evaluate(node.left)
+            right_value = self._evaluate(node.right)
+            if node.value == '+':
+                return left_value + right_value
+            elif node.value == '-':
+                return left_value - right_value
+            elif node.value == '*':
+                return left_value * right_value
+            elif node.value == '/':
+                if right_value == 0:
+                    raise ValueError("Error - Division by zero")
+                return left_value / right_value
