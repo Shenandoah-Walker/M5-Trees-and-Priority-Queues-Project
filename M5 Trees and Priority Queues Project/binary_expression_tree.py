@@ -74,6 +74,13 @@ class BinaryExpressionTree:
         self._inorder(self.root, tokens)
         return " ".join(tokens)
 
+    def postfix_traversal(self):
+        if self.root == None:
+            raise ValueError("Error - Tree is empty. An empty tree cannot be traversed.")
+        tokens = []
+        self._postorder(self.root, tokens)
+        return " ".join(tokens)
+
 
     #Helper functions
 
@@ -87,6 +94,14 @@ class BinaryExpressionTree:
             out.append(str(node.value))
             self._inorder(node.right, out)
             out.append(")")
+
+    def _postorder(self, node, out):
+        if node == None:
+            return None
+        else:
+            self._postorder(node.left, out)
+            self._postorder(node.right, out)
+            out.append(str(node.value))
 
 
     def _evaluate(self, node):
