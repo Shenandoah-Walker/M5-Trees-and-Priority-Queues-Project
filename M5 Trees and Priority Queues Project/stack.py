@@ -17,3 +17,6 @@ class Stack:
         return len(self._stack) == 0
     def size(self):
         return len(self._stack)
+    #Another name for peek to match Canvas's pseudocode (so I can follow along more easily)
+    def top(self):
+        return self.peek()

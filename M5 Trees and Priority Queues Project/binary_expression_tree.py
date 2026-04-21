@@ -1,3 +1,4 @@
+from math import e
 from stack import Stack
 
 class TreeNode:
@@ -22,7 +23,8 @@ class BinaryExpressionTree:
     def build_from_postfix(self, postfix_expression):
 
         stack = Stack()
-        for token in postfix_expression:
+        tokens = postfix_expression.split()
+        for token in tokens:
             if token.isdigit():
                 node = TreeNode(token)
                 stack.push(node)
@@ -31,8 +33,31 @@ class BinaryExpressionTree:
                 node = TreeNode(token)
 
                 if not stack.is_empty():
-                    right = stack.peek()
+                    right = stack.top()
                     stack.pop()
                     node.right = right
+                else:
+                    raise ValueError("Error - Stack is empty")
 
-                    if not stack.is_empty():
+                
+                if not stack.is_empty():
+                    left = stack.top()
+                    stack.pop()
+                    node.left = left
+                else:
+                    raise ValueError("Error - Stack is empty")
+
+                stack.push(node)
+
+            else:
+                raise ValueError("Error - Unsupported token: " + token)
+
+            if not stack.is_empty():
+                self.root = stack.top()
+                stack.pop()
+
+            else:
+                raise ValueError("Error - Stack is empty")
+
+            if not stack.is_empty():
+                raise ValueError("Error - Stack is empty")
