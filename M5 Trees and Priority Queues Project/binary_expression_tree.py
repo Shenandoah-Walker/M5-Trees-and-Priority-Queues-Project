@@ -149,7 +149,12 @@ class BinaryExpressionTree:
     #Preconditions: The node is a valid TreeNode and the out list is initialized.
     #Postconditions: out contains infix representation of subtree.
     def _inorder(self, node, out):
+
         if node == None:
+            return None
+
+        elif node.left == None and node.right == None:
+            out.append(str(node.value))
             return None
 
         else:
