@@ -66,8 +66,29 @@ class BinaryExpressionTree:
             raise ValueError("Error - Tree is empty. An empty tree cannot be evaluated.")
         return self.evaluate(self.root)
 
+    def infix_traversal(self):
+        if self.root == None:
+            raise ValueError("Error - Tree is empty. An empty tree cannot be traversed.")
+
+        tokens = []
+        self._inorder(self.root, tokens)
+        return " ".join(tokens)
+
 
     #Helper functions
+
+    def _inorder(self, node, out):
+        if node == None:
+            return None
+
+        else:
+            out.append("(")
+            self._inorder(node.left, out)
+            out.append(str(node.value))
+            self._inorder(node.right, out)
+            out.append(")")
+
+
     def _evaluate(self, node):
         if node.left == None and node.right == None:
             return float(node.value)
@@ -84,3 +105,6 @@ class BinaryExpressionTree:
                 if right_value == 0:
                     raise ValueError("Error - Division by zero")
                 return left_value / right_value
+
+
+
