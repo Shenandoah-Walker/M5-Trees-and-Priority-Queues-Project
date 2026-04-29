@@ -1,12 +1,31 @@
 import heapq
 
+#Class: TriageSystem
+#Purpose: To maintain a triage queue where patients are prioritized by severity (higher is more urgent). Ties are broken by arrival order (earlier first).
+
 class TriageSystem:
 
     arrival_counter = 0
 
+    #Method: __init__
+    #Purpose: Initializes the triage system with an empty queue
+    #Parameters: 
+    # - TriageSystem T : The triage system object being initialized
+    #Returns: None
+    #Preconditions: None
+    #Postconditions: A new, empty triage system T with internal queue empty is returned and the class-level arrival counter is unchanged (or initiated to 0 if first instance)
     def __init__(T):
         T.queue = []
 
+    #Method: AddPatient
+    #Purpose: Adds a patient to the triage system with the given name and severity
+    #Parameters:
+    # - TriageSystem T : The triage system object to which the patient will be added
+    # - str name : The name of the patient being added
+    # - int severity : The severity level of the patient being added
+    #Returns: None
+    #Preconditions: name must be a non-empty string, severity must be an integer between 1 and 5, inclusive
+    #Postconditions: A new patient (name, severity) is inserted into T’s private queue with priority ordered by higher severity before lower and for equal severity, earlier arrival (as determined by the class-level counter) before later.
     def AddPatient(T, name, severity):
         if name == None:
             raise ValueError("Patient must have a name.")
@@ -19,6 +38,7 @@ class TriageSystem:
 
          heapq.heappush(T.queue, (-severity, arrival_order, name))
 
+    #Method: ProcessNext
     def ProcessNext(T):
         if T.IsEmpty():
             return None
