@@ -10,12 +10,14 @@ class TriageSystem:
     def AddPatient(T, name, severity):
         if name == None:
             raise ValueError("Patient must have a name.")
-        if (severity < 1) or (severity > 5):
+        elif (severity < 1) or (severity > 5):
             raise ValueError("Severity must be between 1 and 5.")
 
-        arrival_order = TriageSystem.NextArrivalOrder()
+        else:
 
-        heapq.heappush(T.queue, (-severity, arrival_order, name))
+         arrival_order = TriageSystem.NextArrivalOrder()
+
+         heapq.heappush(T.queue, (-severity, arrival_order, name))
 
     def ProcessNext(T):
         if T.IsEmpty():
