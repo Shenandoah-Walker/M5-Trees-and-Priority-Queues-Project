@@ -43,7 +43,8 @@ class TriageSystem:
             return False
 
 
-
+    def Size(T):
+        return len(T.queue)
 
 
 
