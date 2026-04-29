@@ -36,6 +36,12 @@ class TriageSystem:
             severity = -negative_severity
             return (name, severity)
 
+    def IsEmpty(T):
+        if len(T.queue) == 0:
+            return True
+        else:
+            return False
+
 
 
 
