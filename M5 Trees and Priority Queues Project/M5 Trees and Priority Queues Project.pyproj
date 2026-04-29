@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>2bdeaaf7-7a05-4690-8332-a069e022d399</ProjectGuid>
+    <ProjectGuid>{b7a909ad-da65-6aa9-0eb3-9dc90271f5b7}</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>M5_Trees_and_Priority_Queues_Project.py</StartupFile>
     <SearchPath>
@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="M5_Trees_and_Priority_Queues_Project.py" />
+    <Compile Include="TriageSystem.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
