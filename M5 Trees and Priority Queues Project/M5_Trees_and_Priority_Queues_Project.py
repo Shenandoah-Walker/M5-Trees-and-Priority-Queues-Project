@@ -17,3 +17,8 @@ Triage.AddPatient("Rachel", 4)
 
 #Output header
 print("Processing patients:")
+
+#Print the patients in treatment order, including their names and severities, until the triage system is empty
+while not Triage.IsEmpty():
+    name, severity = Triage.ProcessNext()
+    print(f"Now treating: {name} (severity {severity})")
