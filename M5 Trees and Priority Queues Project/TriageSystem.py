@@ -17,6 +17,15 @@ class TriageSystem:
 
         heapq.heappush(T.queue, (-severity, arrival_order, name))
 
+    def ProcessNext(T):
+        if T.IsEmpty():
+            return None
+
+        else:
+            negative_severity, arrival_order, name = heapq.heappop(T.queue)
+            severity = -negative_severity
+            return (name, severity)
+
 
 
 
