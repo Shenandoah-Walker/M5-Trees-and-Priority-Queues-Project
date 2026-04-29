@@ -46,6 +46,9 @@ class TriageSystem:
     def Size(T):
         return len(T.queue)
 
+    def Clear(T):
+        T.queue = []
+
 
 
     #Class-level static method for AddPatient
