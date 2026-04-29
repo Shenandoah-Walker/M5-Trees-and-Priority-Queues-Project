@@ -26,6 +26,14 @@ class TriageSystem:
             severity = -negative_severity
             return (name, severity)
 
+    def PeekNext(T):
+        if T.IsEmpty():
+            return None
+        else:
+            negative_severity, arrival_order, name = T.queue[0]
+            severity = -negative_severity
+            return (name, severity)
+
 
 
 
